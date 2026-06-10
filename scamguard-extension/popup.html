@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ScamGuard</title>
+  <link rel="stylesheet" href="src/popup.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="logo">🛡️</div>
+      <div>
+        <h1>ScamGuard</h1>
+        <p>Anti-scam & phishing checker</p>
+      </div>
+    </header>
+
+    <section class="scan-card">
+      <div class="tabs" role="tablist">
+        <button class="tab active" id="tab-page" type="button">Current page</button>
+        <button class="tab" id="tab-manual" type="button">Paste text/link</button>
+      </div>
+
+      <div id="page-panel" class="panel active">
+        <button id="scan-page" class="primary" type="button">Scan current page</button>
+        <div class="row gap">
+          <button id="highlight-links" class="secondary" type="button">Highlight risky links</button>
+          <button id="clear-highlights" class="ghost" type="button">Clear</button>
+        </div>
+        <p class="hint">Quét URL trang hiện tại, text được chọn, nội dung trang và các link nhìn thấy.</p>
+      </div>
+
+      <div id="manual-panel" class="panel">
+        <textarea id="manual-input" placeholder="Dán tin nhắn, email hoặc link đáng nghi vào đây..."></textarea>
+        <button id="scan-manual" class="primary" type="button">Scan pasted content</button>
+      </div>
+    </section>
+
+    <section id="result" class="result empty">
+      <div class="empty-state">Bấm scan để kiểm tra rủi ro.</div>
+    </section>
+
+    <section class="footer-actions">
+      <button id="copy-report" class="ghost" type="button">Copy report</button>
+      <button id="save-history" class="ghost" type="button">Save result</button>
+      <a href="options.html" target="_blank">History</a>
+    </section>
+  </main>
+
+  <script src="src/scanner.js"></script>
+  <script src="src/popup.js"></script>
+</body>
+</html>
